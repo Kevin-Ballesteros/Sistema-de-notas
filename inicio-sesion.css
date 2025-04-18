@@ -1,0 +1,97 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo-circle {
+    width: 90px;  /* Aumentado el tamaño del logo */
+    height: 90px; /* Aumentado el tamaño del logo */
+    background-color: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-circle span {
+    font-size: 28px; /* Aumentado el tamaño de la letra dentro del logo */
+    color: #aaa;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #212529;
+}
+
+.login-card {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* Ya no necesitamos text-align: center aquí porque lo añadimos en el HTML */
+}
+
+.form-control {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+}
+
+.forgot-password {
+    font-size: 0.875rem;
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: #0a58ca;
+}
+
+.btn-dark {
+    background-color: #212529;
+    border-color: #212529;
+    font-weight: 500;
+}
+
+.btn-dark:hover {
+    background-color: #1a1e21;
+    border-color: #1a1e21;
+}
+
+.footer-text {
+    font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .login-card {
+        margin: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .logo-circle {
+        width: 75px; /* Ajustado para pantallas pequeñas */
+        height: 75px;
+    }
+    
+    .logo-circle span {
+        font-size: 24px; /* Ajustado para pantallas pequeñas */
+    }
+}

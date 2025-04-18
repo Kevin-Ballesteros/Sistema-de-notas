@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Santa Pacha - Sistema de Gestión de Calificaciones</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="inicio-sesion.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="text-center mb-4 mt-5">
+                    <div class="logo-circle mx-auto">
+                        <span>SP</span>
+                    </div>
+                    <h1 class="mt-3">Colegio Santa Pacha</h1>
+                    <p class="text-muted">Sistema de Gestión de Calificaciones</p>
+                </div>
+
+                <div class="card login-card">
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-2 text-center">Iniciar Sesión</h2>
+                        <p class="text-muted mb-4 text-center">Ingrese sus credenciales para acceder al sistema</p>
+                        
+                        <form>
+                            <div class="mb-3">
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su nombre de usuario">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="contrasena" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+                            </div>
+                            
+                            <!-- Fila modificada con Recordarme y Olvidó su contraseña -->
+                            <div class="mb-4 d-flex justify-content-between align-items-center">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="recordarme">
+                                    <label class="form-check-label" for="recordarme">Recordarme</label>
+                                </div>
+                                <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-dark w-100 py-2">Iniciar Sesión</button>
+                        </form>
+                        
+                        <!-- Copyright movido dentro del card -->
+                        <div class="text-center mt-4 text-muted footer-text">
+                            © 2025 Colegio Santa Pacha. Todos los derechos reservados.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
