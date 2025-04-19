@@ -6,54 +6,80 @@
     <title>Colegio Santa Pacha - Sistema de Gestión de Calificaciones</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="inicio-sesion.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-lg-5">
-                <div class="text-center mb-4 mt-5">
-                    <div class="logo-circle mx-auto">
-                        <span>SP</span>
-                    </div>
-                    <h1 class="mt-3">Colegio Santa Pacha</h1>
-                    <p class="text-muted">Sistema de Gestión de Calificaciones</p>
-                </div>
-
-                <div class="card login-card">
-                    <div class="card-body p-4">
-                        <h2 class="card-title mb-2 text-center">Iniciar Sesión</h2>
-                        <p class="text-muted mb-4 text-center">Ingrese sus credenciales para acceder al sistema</p>
-                        
-                        <form>
-                            <div class="mb-3">
-                                <label for="usuario" class="form-label">Usuario</label>
-                                <input type="text" class="form-control" id="usuario" placeholder="Ingrese su nombre de usuario">
-                            </div>
-                            
-                            <div class="mb-3">
-                                <label for="contrasena" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
-                            </div>
-                            
-                            <!-- Fila modificada con Recordarme y Olvidó su contraseña -->
-                            <div class="mb-4 d-flex justify-content-between align-items-center">
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="recordarme">
-                                    <label class="form-check-label" for="recordarme">Recordarme</label>
-                                </div>
-                                <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-dark w-100 py-2">Iniciar Sesión</button>
-                        </form>
-                        
-                        <!-- Copyright movido dentro del card -->
-                        <div class="text-center mt-4 text-muted footer-text">
-                            © 2025 Colegio Santa Pacha. Todos los derechos reservados.
+    <div class="container-fluid p-0 m-0">
+        <div class="row g-0">
+            <!-- Columna izquierda - Formulario de inicio de sesión -->
+            <div class="col-md-5 login-form-container">
+                <div class="login-content">
+                    <!-- Logo - Ahora con imagen -->
+                    <div class="logo-container">
+                        <div class="logo">
+                            <!-- Reemplaza "ruta-a-tu-logo.png" con la ruta a tu imagen de logo -->
+                            <img src="Images/Logo_colegio1.png" alt="Logo Colegio Santa Pacha" class="logo-img">
                         </div>
                     </div>
+                    
+                    <!-- Título y subtítulo -->
+                    <h1 class="welcome-text">¡Hola, Bienvenido!</h1>
+                    <p class="subtitle">Inicia sesión para acceder al sistema de calificaciones del Colegio Santa Pacha.</p>
+                    
+                    <!-- Formulario -->
+                    <form class="mt-4">
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Iniciar sesión <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control custom-input" id="usuario" placeholder="Email o número de celular">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="contrasena" class="form-label">Contraseña <span class="text-danger">*</span></label>
+                            <div class="password-input-container">
+                                <input type="password" class="form-control custom-input" id="contrasena" placeholder="Ingresa tu contraseña">
+                                <span class="password-toggle"><i class="far fa-eye"></i></span>
+                            </div>
+                            <div class="d-flex justify-content-end mt-2">
+                                <a href="recuperar-contraseña.html" class="forgot-password">¿Olvidó su contraseña?</a>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input custom-checkbox" id="recordarme">
+                                <label class="form-check-label" for="recordarme">Recordarme</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input custom-checkbox" id="terminos">
+                                <label class="form-check-label" for="terminos">Acepto términos y condiciones</label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 login-btn">Iniciar Sesión</button>
+                        
+                        <div class="text-center mt-3 register-link">
+                            ¿No tiene una cuenta? <a href="registro.html">Registrarse aquí</a>
+                        </div>
+                    </form>
+                    
+                    <!-- Copyright -->
+                    <div class="text-center mt-2 text-muted footer-text">
+                        © 2025 Colegio Santa Pacha. Todos los derechos reservados.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Columna derecha - Ahora con imagen usando etiqueta img -->
+            <div class="col-md-7 graphic-container">
+                <div class="image-wrapper">
+                    <img src="Images/Fondo2.jpg" alt="Estudiantes escribiendo" class="background-image">
+                    <div class="overlay"></div>
                 </div>
             </div>
         </div>
@@ -61,5 +87,25 @@
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para mostrar/ocultar contraseña -->
+    <script>
+        document.querySelector('.password-toggle').addEventListener('click', function() {
+            const passwordInput = document.getElementById('contrasena');
+            const icon = this.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    </script>
 </body>
-</html>
+</html> 
+
+
