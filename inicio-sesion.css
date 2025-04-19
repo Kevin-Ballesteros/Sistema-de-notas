@@ -1,97 +1,212 @@
+/* Estilos generales */
 body {
-    background-color: #f8f9fa;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.logo-circle {
-    width: 90px;  /* Aumentado el tamaño del logo */
-    height: 90px; /* Aumentado el tamaño del logo */
-    background-color: #eee;
-    border-radius: 50%;
+/* Contenedor del formulario de inicio de sesión */
+.login-form-container {
+    height: 100vh;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+}
+
+.login-content {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 80px; /* Bordes más redondeados */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 
+                0 90px 80px rgba(0, 0, 0, 0.04);
+}
+
+/* Logo - Versión más grande */
+.logo-container {
+    margin-bottom: 0.1px;
+    display: flex;
     justify-content: center;
 }
 
-.logo-circle span {
-    font-size: 28px; /* Aumentado el tamaño de la letra dentro del logo */
-    color: #aaa;
-    font-weight: bold;
+.logo {
+    color: white;
+    width: 140px;
+    height: 150px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: 30px;
 }
 
-h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #212529;
+.logo-img {
+    max-width: 150%;
+    max-height: 150%;
+    object-fit: contain;
 }
 
-.login-card {
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+/* Textos de bienvenida */
+.welcome-text {
+    font-size: 32px;
+    font-weight: 700px;
+    margin-bottom: 10px;
+    color: #1a1a2e;
+    text-align: center;
 }
 
-.card-title {
-    font-size: 1.5rem;
-    font-weight: 600;
-    /* Ya no necesitamos text-align: center aquí porque lo añadimos en el HTML */
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-.form-control {
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
+/* Formulario */
+.form-label {
+    font-weight: 500;
+    color: #333;
 }
 
-.form-control:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.1);
+.custom-input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
 }
 
+.custom-input:focus {
+    border-color: #0450c3;
+    box-shadow: 0 0 0 0.2rem rgba(30, 99, 237, 0.25);
+}
+
+/* Contenedor de input de contraseña */
+.password-input-container {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.password-toggle:hover {
+    color: #0450c3; /* Cambio de color al pasar el mouse */
+}
+
+/* Checkbox personalizado */
+.custom-checkbox {
+    border-radius: 4px;
+}
+
+.custom-checkbox:checked {
+    background-color: #0066ff;
+    border-color: #0450c3;
+}
+
+/* Enlaces */
 .forgot-password {
-    font-size: 0.875rem;
-    color: #0d6efd;
+    color: #5a3bff;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .forgot-password:hover {
     text-decoration: underline;
-    color: #0a58ca;
 }
 
-.btn-dark {
-    background-color: #212529;
-    border-color: #212529;
+.forgot-password:active {
+    color: #0450c3;
+}
+
+/* Botón de inicio de sesión */
+.login-btn {
+    background-color: #2878da;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.btn-dark:hover {
-    background-color: #1a1e21;
-    border-color: #1a1e21;
+.login-btn:hover {
+    background-color: #0450c3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px #013076;
 }
 
+/* Enlace de registro */
+.register-link {
+    font-size: 14px;
+    color: #666;
+    margin-top: 25px;
+}
+
+.register-link a {
+    color: #4729f5;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Contenedor gráfico con imagen usando etiqueta img */
+.graphic-container {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff; 
+ 
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .graphic-container {
+        display: none;
+    }
+    
+    .login-form-container {
+        width: 100%;
+    }
+}
+
+@keyframes zoomEffect {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+.background-image {
+    animation: zoomEffect 30s infinite alternate;
+}
+
+
+/* Footer */
 .footer-text {
-    font-size: 0.875rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-    .login-card {
-        margin: 0 10px;
-    }
-    
-    h1 {
-        font-size: 1.4rem;
-    }
-    
-    .card-title {
-        font-size: 1.3rem;
-    }
-    
-    .logo-circle {
-        width: 75px; /* Ajustado para pantallas pequeñas */
-        height: 75px;
-    }
-    
-    .logo-circle span {
-        font-size: 24px; /* Ajustado para pantallas pequeñas */
-    }
+    font-size: 12px;
+    margin-top: 40px;
 }
