@@ -20,7 +20,6 @@
                     <!-- Logo - Ahora con imagen -->
                     <div class="logo-container">
                         <div class="logo">
-                            <!-- Reemplaza "ruta-a-tu-logo.png" con la ruta a tu imagen de logo -->
                             <img src="Images/Logo_colegio1.png" alt="Logo Colegio Santa Pacha" class="logo-img">
                         </div>
                     </div>
@@ -30,10 +29,11 @@
                     <p class="subtitle">Inicia sesión para acceder al sistema de calificaciones del Colegio Santa Pacha.</p>
                     
                     <!-- Formulario -->
-                    <form class="mt-4">
+                    <form class="mt-4" id="loginForm">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">Iniciar sesión <span class="text-danger">*</span></label>
                             <input type="text" class="form-control custom-input" id="usuario" placeholder="Email o número de celular">
+                            <div class="error-message" id="usuario-error"></div>
                         </div>
                         
                         <div class="mb-3">
@@ -42,6 +42,7 @@
                                 <input type="password" class="form-control custom-input" id="contrasena" placeholder="Ingresa tu contraseña">
                                 <span class="password-toggle"><i class="far fa-eye"></i></span>
                             </div>
+                            <div class="error-message" id="contrasena-error"></div>
                             <div class="d-flex justify-content-end mt-2">
                                 <a href="recuperar-contraseña.html" class="forgot-password">¿Olvidó su contraseña?</a>
                             </div>
@@ -61,7 +62,10 @@
                             </div>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary w-100 login-btn">Iniciar Sesión</button>
+                        <button type="submit" class="btn btn-primary w-100 login-btn" id="loginButton">
+                            <span class="btn-text">Iniciar Sesión</span>
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
                         
                         <div class="text-center mt-3 register-link">
                             ¿No tiene una cuenta? <a href="registro.html">Registrarse aquí</a>
@@ -88,24 +92,7 @@
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Script para mostrar/ocultar contraseña -->
-    <script>
-        document.querySelector('.password-toggle').addEventListener('click', function() {
-            const passwordInput = document.getElementById('contrasena');
-            const icon = this.querySelector('i');
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.classList.remove('fa-eye');
-                icon.classList.add('fa-eye-slash');
-            } else {
-                passwordInput.type = 'password';
-                icon.classList.remove('fa-eye-slash');
-                icon.classList.add('fa-eye');
-            }
-        });
-    </script>
+    <!-- Script personalizado -->
+    <script src="Login.js"></script>
 </body>
-</html> 
-
-
+</html>
