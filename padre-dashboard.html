@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Padre de Familia - Colegio Santa Pacha</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="Images/Logo_colegio1.png" alt="Logo Colegio Santa Pacha" class="logo-img">
+                </div>
+                <h5 class="text-center text-white mt-3 mb-0">Colegio Santa Pacha</h5>
+                <p class="text-center text-white-50 small">Sistema de Gestión</p>
+            </div>
+
+            <div class="user-info p-3 mb-3 border-bottom border-secondary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-container me-3">
+                    </div>
+                    <div>
+                        <h6 class="text-white mb-0">Roberto Rodríguez</h6>
+                        <span class="badge bg-purple">Padre de Familia</span>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#childrenSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-users me-2"></i> Mis Hijos
+                    </a>
+                    <ul class="collapse list-unstyled" id="childrenSubmenu">
+                        <li>
+                            <a href="#"><i class="fas fa-user me-2"></i> Carlos Rodríguez</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-user me-2"></i> Ana Rodríguez</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-file-alt me-2"></i> Boletines</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-calendar-alt me-2"></i> Calendario Escolar</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-comment-alt me-2"></i> Comunicaciones</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-cog me-2"></i> Mi Perfil</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido de la página -->
+        <div id="content">
+            <!-- Navbar superior -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown notifications me-3">
+                            <button class="btn position-relative" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    3
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li><h6 class="dropdown-header">Notificaciones</h6></li>
+                                <li><a class="dropdown-item" href="#">Nuevo boletín disponible</a></li>
+                                <li><a class="dropdown-item" href="#">Reunión de padres programada</a></li>
+                                <li><a class="dropdown-item" href="#">Calificación baja registrada</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-center" href="#">Ver todas</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>Roberto</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <div class="container-fluid p-4">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="page-title">Panel de Padre de Familia</h2>
+                        <p class="text-muted">Bienvenido al sistema de gestión de calificaciones, Roberto Rodríguez.</p>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de resumen -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Hijos Registrados</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-users fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Promedio General</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">8.1</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-chart-line fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Notificaciones</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">3</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-bell fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Reuniones Pendientes</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de Hijos -->
+                <div class="row mb-4 parent-dashboard">
+                    <div class="col-12">
+                        <div class="card shadow">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Mis Hijos</h6>
+                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-sync-alt me-1"></i> Actualizar</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <!-- Tarjeta de Hijo 1 -->
+                                    <div class="col-md-6 mb-4">
+                                        <div class="student-card shadow-sm">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div>
+                                                    <h5 class="mb-0">Carlos Rodríguez</h5>
+                                                    <p class="text-muted mb-0">10° A - EST-10254</p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">
+                                                            <i class="fas fa-chart-line text-primary"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-muted mb-0 small">Promedio</p>
+                                                            <h6 class="mb-0">8.2/10</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">
+                                                            <i class="fas fa-calendar-check text-success"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-muted mb-0 small">Asistencia</p>
+                                                            <h6 class="mb-0">98%</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="progress mb-3" style="height: 8px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 82%;" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-eye me-1"></i> Ver Detalle</button>
+                                                <button class="btn btn-sm btn-outline-info"><i class="fas fa-download me-1"></i> Boletín</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Tarjeta de Hijo 2 -->
+                                    <div class="col-md-6 mb-4">
+                                        <div class="student-card shadow-sm">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div>
+                                                    <h5 class="mb-0">Ana Rodríguez</h5>
+                                                    <p class="text-muted mb-0">8° B - EST-10255</p>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-6">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">
+                                                            <i class="fas fa-chart-line text-primary"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-muted mb-0 small">Promedio</p>
+                                                            <h6 class="mb-0">8.0/10</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="me-2">
+                                                            <i class="fas fa-calendar-check text-success"></i>
+                                                        </div>
+                                                        <div>
+                                                            <p class="text-muted mb-0 small">Asistencia</p>
+                                                            <h6 class="mb-0">95%</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="progress mb-3" style="height: 8px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-eye me-1"></i> Ver Detalle</button>
+                                                <button class="btn btn-sm btn-outline-info"><i class="fas fa-download me-1"></i> Boletín</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido en pestañas -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Seguimiento Académico</h6>
+                                <div class="card-tools">
+                                    <ul class="nav nav-tabs card-header-tabs" id="parentTabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="grades-tab" data-bs-toggle="tab" data-bs-target="#grades" type="button" role="tab" aria-controls="grades" aria-selected="true">Calificaciones</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="attendance-tab" data-bs-toggle="tab" data-bs-target="#attendance" type="button" role="tab" aria-controls="attendance" aria-selected="false">Asistencia</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="behavior-tab" data-bs-toggle="tab" data-bs-target="#behavior" type="button" role="tab" aria-controls="behavior" aria-selected="false">Comportamiento</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="parentTabsContent">
+                                    <!-- Pestaña de Calificaciones -->
+                                    <div class="tab-pane fade show active" id="grades" role="tabpanel" aria-labelledby="grades-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Calificaciones Recientes</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Carlos Rodríguez</option>
+                                                    <option>Ana Rodríguez</option>
+                                                </select>
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Primer Bimestre 2025</option>
+                                                    <option>Segundo Bimestre 2025</option>
+                                                    <option>Tercer Bimestre 2025</option>
+                                                    <option>Cuarto Bimestre 2025</option>
+                                                </select>
+                                                <button class="btn btn-primary btn-sm"><i class="fas fa-download me-1"></i> Exportar</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Asignatura</th>
+                                                        <th>Docente</th>
+                                                        <th>Calificación</th>
+                                                        <th>Promedio Grupo</th>
+                                                        <th>Estado</th>
+                                                        <th>Observaciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Matemáticas</td>
+                                                        <td>Prof. García Martínez</td>
+                                                        <td>8.5</td>
+                                                        <td>7.8</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>Buen desempeño en álgebra. Debe mejorar en geometría.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Física</td>
+                                                        <td>Prof. Ramírez</td>
+                                                        <td>7.8</td>
+                                                        <td>7.5</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>Participación activa en clase.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Química</td>
+                                                        <td>Prof. López</td>
+                                                        <td>9.2</td>
+                                                        <td>7.9</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>Excelente desempeño en laboratorio.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Literatura</td>
+                                                        <td>Prof. Martínez</td>
+                                                        <td>8.0</td>
+                                                        <td>7.6</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>Buena comprensión lectora.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Inglés</td>
+                                                        <td>Prof. Wilson</td>
+                                                        <td>7.5</td>
+                                                        <td>7.2</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>Debe practicar más la expresión oral.</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pestaña de Asistencia -->
+                                    <div class="tab-pane fade" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Registro de Asistencia</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Carlos Rodríguez</option>
+                                                    <option>Ana Rodríguez</option>
+                                                </select>
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Abril 2025</option>
+                                                    <option>Marzo 2025</option>
+                                                    <option>Febrero 2025</option>
+                                                </select>
+                                                <button class="btn btn-primary btn-sm"><i class="fas fa-download me-1"></i> Exportar</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h6 class="mb-0">Resumen de Asistencia - Abril 2025</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row mb-4">
+                                                    <div class="col-md-4 mb-3 mb-md-0">
+                                                        <div class="card bg-success text-white">
+                                                            <div class="card-body text-center">
+                                                                <h3 class="mb-0">19</h3>
+                                                                <p class="mb-0">Días Asistidos</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 mb-3 mb-md-0">
+                                                        <div class="card bg-danger text-white">
+                                                            <div class="card-body text-center">
+                                                                <h3 class="mb-0">1</h3>
+                                                                <p class="mb-0">Faltas</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="card bg-warning text-white">
+                                                            <div class="card-body text-center">
+                                                                <h3 class="mb-0">0</h3>
+                                                                <p class="mb-0">Tardanzas</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>Fecha</th>
+                                                                <th>Estado</th>
+                                                                <th>Justificación</th>
+                                                                <th>Observaciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>01/04/2025</td>
+                                                                <td><span class="badge bg-success">Presente</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>02/04/2025</td>
+                                                                <td><span class="badge bg-success">Presente</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>03/04/2025</td>
+                                                                <td><span class="badge bg-success">Presente</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>04/04/2025</td>
+                                                                <td><span class="badge bg-success">Presente</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>05/04/2025</td>
+                                                                <td><span class="badge bg-secondary">Fin de Semana</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>06/04/2025</td>
+                                                                <td><span class="badge bg-secondary">Fin de Semana</span></td>
+                                                                <td>-</td>
+                                                                <td>-</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>07/04/2025</td>
+                                                                <td><span class="badge bg-danger">Ausente</span></td>
+                                                                <td>Cita médica</td>
+                                                                <td>Justificación presentada</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pestaña de Comportamiento -->
+                                    <div class="tab-pane fade" id="behavior" role="tabpanel" aria-labelledby="behavior-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Registro de Comportamiento</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Carlos Rodríguez</option>
+                                                    <option>Ana Rodríguez</option>
+                                                </select>
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Primer Bimestre 2025</option>
+                                                    <option>Segundo Bimestre 2025</option>
+                                                    <option>Tercer Bimestre 2025</option>
+                                                    <option>Cuarto Bimestre 2025</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h6 class="mb-0">Evaluación de Comportamiento - Primer Bimestre 2025</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>Aspecto</th>
+                                                                <th>Evaluación</th>
+                                                                <th>Observaciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Respeto a compañeros</td>
+                                                                <td>
+                                                                    <div class="progress" style="height: 20px;">
+                                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Excelente</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Muestra respeto y colaboración con sus compañeros.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Respeto a docentes</td>
+                                                                <td>
+                                                                    <div class="progress" style="height: 20px;">
+                                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">Excelente</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Siempre respetuoso y atento a las indicaciones.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Participación en clase</td>
+                                                                <td>
+                                                                    <div class="progress" style="height: 20px;">
+                                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">Muy Bueno</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Participa activamente en la mayoría de las clases.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cumplimiento de normas</td>
+                                                                <td>
+                                                                    <div class="progress" style="height: 20px;">
+                                                                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">Excelente</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Cumple con todas las normas establecidas.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Responsabilidad</td>
+                                                                <td>
+                                                                    <div class="progress" style="height: 20px;">
+                                                                        <div class="progress-bar bg-info" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">Muy Bueno</div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>Entrega tareas a tiempo y se prepara para evaluaciones.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                
+                                                <div class="mt-4">
+                                                    <h6>Observaciones Generales:</h6>
+                                                    <p>Carlos muestra un comportamiento ejemplar en el aula. Es respetuoso con sus compañeros y docentes. Participa activamente en clase y cumple con sus responsabilidades académicas. Se recomienda continuar con esta actitud positiva.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comunicaciones y Eventos -->
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Comunicaciones Recientes</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-feed">
+                                    <div class="feed-item pb-3 mb-3 border-bottom">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-primary text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-bullhorn"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Reunión de Padres</strong> - Se convoca a reunión general de padres de familia.</p>
+                                                <p class="mb-0">Fecha: 20 de Abril, 2025 - 18:00 hrs.</p>
+                                                <span class="text-muted small">Hace 2 días</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item pb-3 mb-3 border-bottom">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-info text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Boletín Disponible</strong> - Ya puede descargar el boletín de calificaciones del primer bimestre.</p>
+                                                <span class="text-muted small">Hace 5 días</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-warning text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-exclamation-circle"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Alerta Académica</strong> - Su hijo Carlos presenta una calificación baja en Física. Se recomienda atención.</p>
+                                                <span class="text-muted small">Hace 1 semana</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-outline-primary btn-sm">Ver todas las comunicaciones</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mb-4">
+                        <div class="card shadow">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Próximos Eventos</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-feed">
+                                    <div class="feed-item pb-3 mb-3 border-bottom">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-primary text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-users"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Reunión de Padres</strong></p>
+                                                <span class="text-muted small">20 Abril, 2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item pb-3 mb-3 border-bottom">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-success text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-graduation-cap"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Entrega de Reconocimientos</strong></p>
+                                                <span class="text-muted small">30 Abril, 2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="feed-item">
+                                        <div class="d-flex">
+                                            <div class="feed-icon bg-info text-white rounded-circle p-2 me-3">
+                                                <i class="fas fa-calendar-day"></i>
+                                            </div>
+                                            <div>
+                                                <p class="mb-0"><strong>Inicio Segundo Bimestre</strong></p>
+                                                <span class="text-muted small">2 Mayo, 2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button class="btn btn-outline-primary btn-sm">Ver calendario completo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-white py-4 mt-auto border-top">
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <span class="text-muted">© 2025 Colegio Santa Pacha. Todos los derechos reservados.</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y dependencias -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Script personalizado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle sidebar
+            document.getElementById('sidebarCollapse').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.toggle('active');
+                document.getElementById('content').classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

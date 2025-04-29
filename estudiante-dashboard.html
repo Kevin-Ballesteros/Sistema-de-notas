@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Estudiante - Colegio Santa Pacha</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <img src="Images/Logo_colegio1.png" alt="Logo Colegio Santa Pacha" class="logo-img">
+                </div>
+                <h5 class="text-center text-white mt-3 mb-0">Colegio Santa Pacha</h5>
+                <p class="text-center text-white-50 small">Sistema de Gestión</p>
+            </div>
+
+            <div class="user-info p-3 mb-3 border-bottom border-secondary">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-container me-3">
+                    </div>
+                    <div>
+                        <h6 class="text-white mb-0">Carlos Rodríguez</h6>
+                        <span class="badge bg-warning">Estudiante</span>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#gradesSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-graduation-cap me-2"></i> Mis Calificaciones
+                    </a>
+                    <ul class="collapse list-unstyled" id="gradesSubmenu">
+                        <li>
+                            <a href="#"><i class="fas fa-book me-2"></i> Por Asignatura</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fas fa-calendar-alt me-2"></i> Por Período</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-file-alt me-2"></i> Boletín Completo</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-download me-2"></i> Descargar Boletín</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-user-cog me-2"></i> Mi Perfil</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Contenido de la página -->
+        <div id="content">
+            <!-- Navbar superior -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown notifications me-3">
+                            <button class="btn position-relative" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    2
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                <li><h6 class="dropdown-header">Notificaciones</h6></li>
+                                <li><a class="dropdown-item" href="#">Nueva calificación registrada</a></li>
+                                <li><a class="dropdown-item" href="#">Próxima evaluación programada</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-center" href="#">Ver todas</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span>Carlos</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i> Mi Perfil</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i> Configuración</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i> Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <div class="container-fluid p-4">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="page-title">Panel de Estudiante</h2>
+                        <p class="text-muted">Bienvenido al sistema de gestión de calificaciones, Carlos Rodríguez.</p>
+                    </div>
+                </div>
+
+                <!-- Información del estudiante -->
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <img src="Images/admin-usuario.jpg" alt="Estudiante" class="rounded-circle img-thumbnail">
+                            </div>
+                            <div class="col-md-5 mb-3 mb-md-0">
+                                <h5 class="card-title">Información Personal</h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>Nombre:</strong> Carlos Rodríguez</li>
+                                    <li><strong>ID Estudiante:</strong> EST-10254</li>
+                                    <li><strong>Grado:</strong> 10° A</li>
+                                    <li><strong>Año Lectivo:</strong> 2025</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-5">
+                                <h5 class="card-title">Resumen Académico</h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>Promedio General:</strong> <span class="text-success">8.2/10</span></li>
+                                    <li><strong>Asistencia:</strong> 98%</li>
+                                    <li><strong>Período Actual:</strong> Primer Bimestre 2025</li>
+                                    <li><strong>Director de Grupo:</strong> Prof. García Martínez</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de resumen -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Promedio General</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">8.2</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-award fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            Asignaturas Cursadas</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">9</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-book fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            Actividades Pendientes</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">5</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Asistencia</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">98%</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-calendar-check fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenido en pestañas -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                                <h6 class="m-0 font-weight-bold text-primary">Mis Calificaciones</h6>
+                                <div class="card-tools">
+                                    <ul class="nav nav-tabs card-header-tabs" id="studentTabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="subjects-tab" data-bs-toggle="tab" data-bs-target="#subjects" type="button" role="tab" aria-controls="subjects" aria-selected="true">Asignaturas</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="report-tab" data-bs-toggle="tab" data-bs-target="#report" type="button" role="tab" aria-controls="report" aria-selected="false">Boletín</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="activities-tab" data-bs-toggle="tab" data-bs-target="#activities" type="button" role="tab" aria-controls="activities" aria-selected="false">Actividades</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="tab-content" id="studentTabsContent">
+                                    <!-- Pestaña de Asignaturas -->
+                                    <div class="tab-pane fade show active" id="subjects" role="tabpanel" aria-labelledby="subjects-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Mis Asignaturas</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Primer Bimestre 2025</option>
+                                                    <option>Segundo Bimestre 2025</option>
+                                                    <option>Tercer Bimestre 2025</option>
+                                                    <option>Cuarto Bimestre 2025</option>
+                                                </select>
+                                                <button class="btn btn-primary btn-sm"><i class="fas fa-download me-1"></i> Descargar</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-hover">
+                                                <thead class="table-light">
+                                                    <tr>
+                                                        <th>Asignatura</th>
+                                                        <th>Docente</th>
+                                                        <th>Calificación</th>
+                                                        <th>Estado</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Matemáticas</td>
+                                                        <td>Prof. García Martínez</td>
+                                                        <td>8.5</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> Ver Detalle</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Física</td>
+                                                        <td>Prof. Ramírez</td>
+                                                        <td>7.8</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> Ver Detalle</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Química</td>
+                                                        <td>Prof. López</td>
+                                                        <td>9.2</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> Ver Detalle</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Literatura</td>
+                                                        <td>Prof. Martínez</td>
+                                                        <td>8.0</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> Ver Detalle</button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Inglés</td>
+                                                        <td>Prof. Wilson</td>
+                                                        <td>7.5</td>
+                                                        <td><span class="badge bg-success">Aprobado</span></td>
+                                                        <td>
+                                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-eye"></i> Ver Detalle</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pestaña de Boletín -->
+                                    <div class="tab-pane fade" id="report" role="tabpanel" aria-labelledby="report-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Boletín de Calificaciones</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Primer Bimestre 2025</option>
+                                                    <option>Segundo Bimestre 2025</option>
+                                                    <option>Tercer Bimestre 2025</option>
+                                                    <option>Cuarto Bimestre 2025</option>
+                                                </select>
+                                                <div class="btn-group">
+                                                    <button class="btn btn-primary btn-sm"><i class="fas fa-download me-1"></i> PDF</button>
+                                                    <button class="btn btn-success btn-sm"><i class="fas fa-file-excel me-1"></i> Excel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="card mb-4">
+                                            <div class="card-header bg-light">
+                                                <h6 class="mb-0">Boletín Académico - Primer Bimestre 2025</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row mb-4">
+                                                    <div class="col-md-6">
+                                                        <p><strong>Estudiante:</strong> Carlos Rodríguez</p>
+                                                        <p><strong>ID:</strong> EST-10254</p>
+                                                        <p><strong>Grado:</strong> 10° A</p>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <p><strong>Período:</strong> Primer Bimestre 2025</p>
+                                                        <p><strong>Fecha:</strong> 15/04/2025</p>
+                                                        <p><strong>Director de Grupo:</strong> Prof. García Martínez</p>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead class="table-light">
+                                                            <tr>
+                                                                <th>Asignatura</th>
+                                                                <th>Docente</th>
+                                                                <th>Calificación</th>
+                                                                <th>Logros</th>
+                                                                <th>Observaciones</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Matemáticas</td>
+                                                                <td>Prof. García Martínez</td>
+                                                                <td class="text-center">8.5</td>
+                                                                <td>Comprende y aplica conceptos algebraicos avanzados</td>
+                                                                <td>Buen desempeño. Debe mejorar en resolución de problemas complejos.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Física</td>
+                                                                <td>Prof. Ramírez</td>
+                                                                <td class="text-center">7.8</td>
+                                                                <td>Comprende principios básicos de mecánica</td>
+                                                                <td>Debe reforzar conceptos teóricos y práctica de laboratorio.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Química</td>
+                                                                <td>Prof. López</td>
+                                                                <td class="text-center">9.2</td>
+                                                                <td>Excelente comprensión de conceptos químicos</td>
+                                                                <td>Destacado desempeño en laboratorio y evaluaciones.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Literatura</td>
+                                                                <td>Prof. Martínez</td>
+                                                                <td class="text-center">8.0</td>
+                                                                <td>Buena comprensión lectora y análisis literario</td>
+                                                                <td>Debe mejorar en redacción y ortografía.</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Inglés</td>
+                                                                <td>Prof. Wilson</td>
+                                                                <td class="text-center">7.5</td>
+                                                                <td>Comprensión básica del idioma</td>
+                                                                <td>Necesita practicar más la expresión oral.</td>
+                                                            </tr>
+                                                        </tbody>
+                                                        <tfoot class="table-light">
+                                                            <tr>
+                                                                <th colspan="2" class="text-end">Promedio General:</th>
+                                                                <th class="text-center">8.2</th>
+                                                                <th colspan="2">Aprobado</th>
+                                                            </tr>
+                                                        </tfoot>
+                                                    </table>
+                                                </div>
+                                                
+                                                <div class="row mt-4">
+                                                    <div class="col-md-12">
+                                                        <h6>Observaciones Generales:</h6>
+                                                        <p>El estudiante muestra un buen desempeño académico general. Se recomienda reforzar las áreas de física e inglés para mejorar su rendimiento. Excelente comportamiento y participación en clase.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pestaña de Actividades -->
+                                    <div class="tab-pane fade" id="activities" role="tabpanel" aria-labelledby="activities-tab">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h5>Actividades Académicas</h5>
+                                            <div class="d-flex">
+                                                <select class="form-select form-select-sm me-2">
+                                                    <option selected>Todas las asignaturas</option>
+                                                    <option>Matemáticas</option>
+                                                    <option>Física</option>
+                                                    <option>Química</option>
+                                                    <option>Literatura</option>
+                                                    <option>Inglés</option>
+                                                </select>
+                                                <button class="btn btn-primary btn-sm"><i class="fas fa-calendar-alt me-1"></i
